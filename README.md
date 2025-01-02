@@ -1,1 +1,9 @@
-# Pure db projects by using pure psycopg2 and pymongon and something like that.
+# This system is developed for the simple bank management operation by using Python, Sqlalchemy, Postgresql
+
+# The database table structure for this system includes:
+# 1. Customer
+# 2. Bank Account
+# 3. Transaction
+
+
+
