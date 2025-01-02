@@ -1,7 +1,7 @@
 import psycopg2
 
-conn = psycopg2.connect(host="localhost", dbname="bank_management_system",
-                        user="sai", password="sai", port=5433)
+conn = psycopg2.connect(host="localhost", dbname="test_db",
+                        user="poe", password="#####", port=5433)
 cur = conn.cursor()
 
 cur.execute("""
