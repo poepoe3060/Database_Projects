@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 
+
 Base = declarative_base()
 
 class Customer(Base):
@@ -8,7 +9,7 @@ class Customer(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
     address = Column(String)
-    phone = Column(String)
+    phone = Column(String, unique=True)
 
 class Account(Base):
     __tablename__ = 'accounts'
@@ -17,19 +18,19 @@ class Account(Base):
     account_type = Column(String)
     balance = Column(Float, default=0.0)
 
-class Loan(Base):
-    __tablename__ = 'loan'
-    id = Column(Integer, primary_key=True)
-    loan_id = Column(Integer, ForeignKey('customers.id'))
-    loan_type = Column(String)
-    loan_amount = Column(Float)
-
 class Transaction(Base):
     __tablename__ = 'transactions'
     id = Column(Integer, primary_key=True)
     account_id = Column(Integer, ForeignKey('accounts.id'))
     amount = Column(Float)
     transaction_type = Column(String)
+
+class Loan(Base):
+    __tablename__ = 'loan'
+    id = Column(Integer, primary_key=True)
+    loan_id = Column(Integer, ForeignKey('accounts.id'))
+    loan_type = Column(String)
+    loan_amount = Column(Float)
 
 class Branch(Base):
     __tablename__ = 'branch'
