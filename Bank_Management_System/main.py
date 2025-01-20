@@ -12,4 +12,3 @@ while True:
             print("Please enter valid inputs from options.")
     except ValueError:
         print("Invalid input try again please.")
-
