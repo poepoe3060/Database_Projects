@@ -5,11 +5,14 @@ import mysql.connector as sql
 mydb = sql.connect(
     host = "localhost",
     user = "root",
-    password = "****",
+    password = "root",
     database = "bank_management"
 )
 
 cursor = mydb.cursor()
+
+def db_query(str):
+    return cursor.execute(str)
 
 def create_customer_table():
     cursor.execute('''
