@@ -1,5 +1,5 @@
-# Simple Bank Management System
-# Python3.10 and Mysqlon Ubuntu 22.04
+# Welcome to my Simple Bank Management System
+# Python3.10 and Mysql on Ubuntu 22.04
 
 # Requirement installations 
 # Mysql

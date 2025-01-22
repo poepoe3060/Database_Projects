@@ -1,4 +1,3 @@
-# Customer Details
 from database import *
 
 class Customer:
@@ -10,6 +9,10 @@ class Customer:
         self.__city = city
         self.__account_number = account_number
 
-def createuser(self):
-    temp = db_query(f"INSERT INTO customers CALUES ('{self.__username}', '{self.__password}', '{self.__name}', '{self.__age}', '{self.__city}', '{self.__account_number}', 'True') ")
-    mydb.commit()
+    def createuser(self):
+        db_query(
+            "INSERT INTO customers (username, password, name, age, city, account_number, status) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+            (self.__username, self.__password, self.__name, self.__age, self.__city, self.__account_number, True)
+        )
+        mydb.commit()
+        print(f"Customer {self.__username} added successfully.")
