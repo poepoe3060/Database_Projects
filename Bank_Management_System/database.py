@@ -11,8 +11,11 @@ mydb = sql.connect(
 
 cursor = mydb.cursor()
 
-def db_query(str):
-    return cursor.execute(str)
+def db_query(query, fetch=False):
+    cursor.execute(query)
+    if fetch:
+        return cursor.fetchall()
+    return None
 
 def create_customer_table():
     cursor.execute('''

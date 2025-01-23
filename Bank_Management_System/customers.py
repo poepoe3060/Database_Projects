@@ -11,8 +11,6 @@ class Customer:
 
     def createuser(self):
         db_query(
-            "INSERT INTO customers (username, password, name, age, city, account_number, status) VALUES (%s, %s, %s, %s, %s, %s, %s)",
-            (self.__username, self.__password, self.__name, self.__age, self.__city, self.__account_number, True)
-        )
+            f"INSERT INTO customers VALUES ('{self.__username}','{self.__password}','{self.__name}','{self.__age}','{self.__city}','{self.__account_number}', 1 );")
         mydb.commit()
         print(f"Customer {self.__username} added successfully.")
